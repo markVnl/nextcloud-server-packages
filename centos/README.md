@@ -1,46 +1,7 @@
-Nextcloud
-=========
+Nextcloud php72 (for arm)
+=========================
 
-This repository can be used to build a very basic RPM suited for CentOS 7.
-It uses Apache 2.4 with PHP-FPM to avoid conflicts with existing PHP 5.4 applications.
+The rh-php71 Software Collection is not available for (armhfp/aarch64).
 
-The package has been built following official Nextcloud documentation and
-guidelines about strong directory permissions. See: https://docs.nextcloud.org/
-and https://help.nextcloud.com if you get in trouble.
-
-After the installation, the administrator should take care of the following:
-
-* check Apache configuration and restart the httpd daemon
-* if needed, install and configure MariaDB/MySQL database
-* configure Nextcloud following the official documentation
-
-Dependencies
-------------
-
-The following dependencies are installed:
-
-* Apache HTTP server
-* PHP required packages (from SCL)
-* PHP recommended packages (php-intl)
-* PHP packages for builtin apps (php-ldap)
-* PHP packages for MariaDB/MySQL connection
-
-You need to enable EPEL repository.
-
-The administrator can enable extra features installing following RPMs (from centos-sclo-sclo repository):
-
-* sclo-php71-php-smbclient
-* rh-php71-php-imap
-
-SELinux
--------
-
-It's all on your own, please follow official documentation if you have SELinux enabled
-(which is the default on CentOS 7).
-
-Alternatives RPMs
------------------
-
-If PHP-FPM doesn't fit your environment, please see also @mbevc1 packages:
-
-https://github.com/mbevc1/nextcloud
+A community effort provides a rebuild of remi-safe php72 for armhfp,
+hence dependencies of Nextcloud are adjusted to this.

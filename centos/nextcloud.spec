@@ -14,7 +14,7 @@
 Summary: Nextcloud package
 Name: nextcloud
 Version: 15.0.0
-Release: 1%{?dist}
+Release: 1arm%{?dist}
 License: GPL
 Source: https://download.nextcloud.com/server/releases/nextcloud-%{version}.tar.bz2
 Source1: nextcloud.conf
@@ -25,22 +25,22 @@ BuildRequires: httpd
 
 Requires: httpd
 # Required php packages
-Requires: rh-php71
-Requires: rh-php71-php-fpm
-Requires: rh-php71-php-gd
-Requires: rh-php71-php-pdo
-Requires: rh-php71-php-mbstring
-Requires: rh-php71-php-imagick
+Requires: php72
+Requires: php72-php-fpm
+Requires: php72-php-gd
+Requires: php72-php-pdo
+Requires: php72-php-mbstring
+Requires: php72-php-pecl-imagick
 
 # Recommended php packages
-Requires: rh-php71-php-intl
-Requires: rh-php71-php-mcrypt
+Requires: php72-php-intl
+Requires: php72-php-mcrypt
 
 # Required php packages for specific apps
-Requires: rh-php71-php-ldap
+Requires: php72-php-ldap
 
 # Required php packages for MariaDB
-Requires: rh-php71-php-pdo_mysql
+Requires: php72-php-pdo_mysql
 
 
 %description
@@ -100,11 +100,17 @@ cp %{SOURCE1} %{buildroot}/etc/httpd/conf.d
 
 
 %changelog
+* Tue Dec 18 2018 Mark Verlinde <mark.verlinde@gmail.com>  - 15.0.0-1arm
+- Adjust to PHP72 SCL for arm
+
 * Tue Dec 18 2018 Alessandro Polidori <alessandro.polidori@nethesis.it> - 15.0.0-1
 - Update to release 15.0.0
 
 * Mon Nov 26 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 14.0.4-1
 - Update to release 14.0.4
+
+* Wed Nov 07 2018 Mark Verlinde <mark.verlinde@gmail.com> -  14.0.3-1arm
+- Adjust to PHP72 SCL for armhfp
 
 * Mon Oct 15 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 14.0.3-1
 - Update to release 14.0.3
@@ -115,14 +121,23 @@ cp %{SOURCE1} %{buildroot}/etc/httpd/conf.d
 * Wed Sep 26 2018 Alessandro Polidori <alessandro.polidori@nethesis.it> - 14.0.1-1
 - Update to release 14.0.1
 
+* Thu Sep 6 2018 Mark Verlinde <mark.verlinde@gmail.com> - 14.0.0-1arm
+- Adjust to PHP72 SCL for armhfp
+
 * Thu Sep 6 2018 Alessandro Polidori <alessandro.polidori@nethesis.it> - 14.0.0-1
 - Update to release 14.0.0
+
+* Wed Sep 5 2018 Mark Verlinde <mark.verlinde@gmail.com> - 13.0.6-1arm
+- Adjust to PHP72 SCL for armhfp
 
 * Wed Sep 5 2018 Alessandro Polidori <alessandro.polidori@nethesis.it> - 13.0.6-1
 - Update to release 13.0.6
 
 * Wed Aug 1 2018 Alessandro Polidori <alessandro.polidori@nethesis.it> - 13.0.5-1
 - Update to release 13.0.5
+
+* Sun Jul 29 2018 Mark Verlinde <mark.verlinde@gmail.com> - 13.0.4-2arm
+- Adjust to PHP72 SCL for armhfp
 
 * Mon Jun 11 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 13.0.4-1
 - Update to release 13.0.4
